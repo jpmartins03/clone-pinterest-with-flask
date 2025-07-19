@@ -7,5 +7,20 @@
 </head>
 <body>
     <h1>Perfil do caboco</h1>
+    <h2> Seu nome é  {{ usuario }} </h2>
+    <h2> Ele tem {{ idade }} anos</h2>
+    
+    <!-- a sintaxe das chaves duplas serve para escrever codigos python dentro do html -->
+
+    <a href="/"> Homepage </a>
+    <br>
+    <a href="{{ url_for('homepage') }}"> Homepage usando url_for</a>
+
+    <!-- a tag <a> indica um link -->
+    <!-- voce precisa colcoar um href para o link do link -->
+    <!-- para links internos, ou seja, links de rotas definidas por voce-->
+    <!-- basta colocar a rota no lugar do link -->
+<!-- se vc importar o url_for a rota pode ser o nome da fun;áo de renderização python -->
 </body>
 </html>
+
