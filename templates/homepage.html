@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FakePinterest</title>
+    <title>
+    {% block title %}
+        FakePinterest
+    {% endblock %}
+    </title>
 </head>
+{% block body %}
 <body>
     "Fake Pinterest - Site no ar"
-    <a href="/perfil/fulano"> perfil fulano</a>
 </body>
+{% endblock %}
+
 </html>
