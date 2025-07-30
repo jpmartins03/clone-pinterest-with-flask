@@ -2,6 +2,7 @@
 from fakePinterest import database, app
 from fakePinterest.models import User, Post
 
+
 ##preciso definir que estou "olhando" para meu app e dentro do contexto dele estou criando meu banco de dados
 
 with app.app_context():

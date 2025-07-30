@@ -1,6 +1,12 @@
 ## arquivo que cria a estrutura do banco de dados
-from fakePinterest import database
+from fakePinterest import database, login_manager
 from datetime import datetime
+from flask_login import UserMixin ##diz qual a classe que vai gerenciar a estrutura de login
+
+@login_manager.user_loader
+## essa função é chamada quando o usuário faz login, e ela carrega o usuário do banco
+def load_user(id_user):
+    return User.query.get(int(id_usuario))
 
 ## preciso passar o parametro database.Model para que o python entenda que isso nao é um classe comum do python
 ## mas sim uma classe modelo para criar uma tabela no banco de dados
