@@ -6,7 +6,7 @@ from flask_login import UserMixin ##diz qual a classe que vai gerenciar a estrut
 @login_manager.user_loader
 ## essa função é chamada quando o usuário faz login, e ela carrega o usuário do banco
 def load_user(id_user):
-    return User.query.get(int(id_usuario))
+    return User.query.get(int(id_user))
 
 ## preciso passar o parametro database.Model para que o python entenda que isso nao é um classe comum do python
 ## mas sim uma classe modelo para criar uma tabela no banco de dados
@@ -14,7 +14,7 @@ def load_user(id_user):
 ## por exemplo, se eu criar a classe User, o nome da tabela vai ser user
 ## se eu criar a classe Post, o nome da tabela vai ser post
 ## se eu criar a classe Comment, o nome da tabela vai ser comment
-class User(database.Model):
+class User(database.Model, UserMixin):
     id = database.Column(database.Integer, primary_key=True)
     username = database.Column(database.String, nullable=False, unique=True)
     email = database.Column(database.String, nullable=False, unique=True)
